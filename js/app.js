@@ -16,27 +16,25 @@ const handleFormSubmit=function(event){
     document.querySelector('#reading-list');
 
 
-    const newListItem=document.createElement("li");
-    newListItem.textContent=`${event.target.title.value}`;
+    const newLIstContainer=document.createElement("div");
+    newLIstContainer.classList.add('list-container');
+    const readingList=document.querySelector('#reading-list');
+    readingList.appendChild(newLIstContainer);
 
-    const newListItem2=document.createElement("li");
+
+    const newListItem=document.createElement("p");
+    newListItem.textContent=`${event.target.title.value}`;
+    
+    const newListItem2=document.createElement("p");
     newListItem2.textContent=`${event.target.author.value}`;
   
-    const newListItem3=document.createElement("li");
-    newListItem3.textContent=`${event.target.category.value}`;
-
-    const list=document.querySelector("ul");
-    list.appendChild(newListItem);
-    list.appendChild(newListItem2);
-    list.appendChild(newListItem3);
-
-    document.createElement("ul");
+    const newListItem3=document.createElement("p");
+    newListItem3.textContent=`${event.target.category.value}`;    
+    
+    const listItem=document.querySelector("#list-container");
+    listItem.appendChild(newListItem);
+    listItem.appendChild(newListItem2);
+    listItem.appendChild(newListItem3);
 
     document.querySelector("#new-item-form").reset();
   }
-
-  // const handleInput=function(event){
-  //   // console.log(event.target.value);
-  //   const resultAuthor=document.querySelector('#reading-list');
-  //   resultAuthor.textContent=`${event.target.value}`
-  // }
